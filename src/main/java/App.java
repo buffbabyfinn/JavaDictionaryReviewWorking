@@ -1,27 +1,22 @@
-import java.util.Map;
 import java.util.HashMap;
+import java.util.ArrayList;
+
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 import static spark.Spark.*;
 
 public class App {
-  public static void main( String[] args ) {
+  public static void main(String[] args) {
     staticFileLocation("/public");
     String layout = "templates/layout.vtl";
-    // System.out.println( "Hello World!" );
 
     get("/", (request, response) -> {
-        HashMap model = new HashMap();
-        model.put("template", "templates/hello.vtl" );
+      HashMap<String, Object> model = new HashMap<String, Object>();
 
-        return new ModelAndView(model, "templates/layout.vtl");
-      }, new VelocityTemplateEngine());
+      model.put("tasks", request.session().attribute("tasks"));
 
-    get("/other", (request, response) -> {
-        HashMap model = new HashMap();
-        model.put("template", "templates/other.vtl" );
-
-        return new ModelAndView(model, "templates/layout.vtl");
-      }, new VelocityTemplateEngine());
-    }
+      model.put("template", "templates/index.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
   }
+}
