@@ -1,0 +1,9 @@
+Word:
+  take user Word
+  display the Word
+  take multiple definitions for the word (array list)
+  display all words
+  click on the word to see the definitions of the Word
+
+Definitions:
+  take multiple user definitions
