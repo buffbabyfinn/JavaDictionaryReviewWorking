@@ -1,0 +1,15 @@
+<h1>Add a definition to $word.getName()</h1>
+
+<form action="/definitions" method="post">
+  <input type="hidden" name="wordId" id="wordId" value="$word.getId()">
+
+  <div class="form-group">
+    <label for="description">Definition:</label>
+    <input id="description" name="description" type="text">
+  </div>
+  <button type="submit" class="btn btn-success">Define $word.getName()!</button>
+
+</form>
+
+<a href="/words/$name.getId()/tasks/new"><button class="btn btn-primary">Add another definition</button></a>
+<a href="/words"><button class="btn btn-success">Return to Dictionary</button></a>

@@ -1,1 +1,8 @@
-//unique html to format secondary page goes here
+<h1>Your Dictionary:</h1>
+<h4>Click on a word to add a definition!</h4>
+
+<ul>
+#foreach($word in $words)
+ <li><h3><a href="/categories/$category.getId()">$category.getName()></a></h3></li>
+#end
+</li>

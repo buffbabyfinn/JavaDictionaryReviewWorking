@@ -27,7 +27,7 @@ public class WordTest {
   }
 
   @Test
-  public void getWord_initiallyReturnsEmptyArrayList() {
+  public void getDefinition_initiallyReturnsEmptyArrayList() {
     Word myWord = new Word("Crab");
     assertTrue(myWord.getDefinition() instanceof ArrayList);
   }
@@ -48,7 +48,7 @@ public class WordTest {
   }
 
   @Test
-  public void find_returnsWordyWithSameId() {
+  public void find_returnsWordsWithSameId() {
     Word myWord = new Word("Home");
     Word testWord = new Word("Crab");
     assertEquals(Word.find(testWord.getId()), testWord);
