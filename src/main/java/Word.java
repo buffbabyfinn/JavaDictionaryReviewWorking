@@ -8,10 +8,10 @@ public class Word {
   private int mId;
 
   public Word(String name) {
-    mDefinitions = new ArrayList<Definition>();
     mName = name;
     instances.add(this);
     mId = instances.size();
+    mDefinitions = new ArrayList<Definition>();
   }
 
   public int getId() {

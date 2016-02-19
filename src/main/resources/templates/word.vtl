@@ -1,10 +1,12 @@
 <h1>Definitions for $word.getName()</h1>
 
-#foreach($definition in $word.getDefinitions())
- <h3>$definition.getDescription()</h3>
+#foreach($definition in $word.getDefinition())
+ <h3>$definitions.getDescription()</h3>
+ <h5>Definition number: $definitions.getId()</h5>
+ <h5>Defined at: $definitions.getDefinedAt()</h5>
 #end
 
-<a href="/words/$word.getId()/definitions/new"><button class="btn btn-success">Add another definiton</button></a>
+<a href="/words/$word.getId()/definitions/new"><button class="btn btn-success">Add a/nother definiton</button></a>
 <a href="/words/new"><button class="btn btn-primary">Add a new word</button></a>
 
 <a href="/words"><button class="btn btn-info">Return to Dictionary</button></a>

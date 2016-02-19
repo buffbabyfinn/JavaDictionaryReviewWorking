@@ -6,4 +6,4 @@
 <p>Your definition has been saved.</p>
 #end
 
-<a href="/words"><button class="btn btn-primary">View all words</button></a>
+<a href="/words"><button class="btn btn-primary">View dictionary</button></a>
