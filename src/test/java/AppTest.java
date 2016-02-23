@@ -33,25 +33,23 @@ public class AppTest extends FluentTest {
   public void wordIsCreatedTest() {
     goTo("http://localhost:4567/");
     click("a", withText("Add your first word!"));
-    fill("#name").with("Crab");
+    fill("#word").with("Crab");
     submit(".btn");
-    assertThat(pageSource()).contains("Your word has been saved.");
+    assertThat(pageSource()).contains("Your Dictionary:");
   }
   @Test
   public void WordIsDisplayedTest() {
     goTo("http://localhost:4567/words/new");
-    fill("#name").with("Crab");
+    fill("#word").with("Crab");
     submit(".btn");
-    click("a", withText("View dictionary"));
     assertThat(pageSource()).contains("Crab");
   }
 
   @Test
   public void wordDefinitionFormIsDisplayed() {
     goTo("http://localhost:4567/words/new");
-    fill("#name").with("Crab");
+    fill("#word").with("Crab");
     submit(".btn");
-    click("a", withText("View dictionary"));
     click("a", withText("Crab"));
     click("a", withText("Add a/nother definition"));
     assertThat(pageSource()).contains("Add a definition to Crab");
@@ -60,13 +58,12 @@ public class AppTest extends FluentTest {
   @Test
   public void definitionIsAddedAndDisplayed() {
     goTo("http://localhost:4567/words/new");
-    fill("#name").with("Crab");
+    fill("#word").with("Crab");
     submit(".btn");
-    click("a", withText("View dictionary"));
     click("a", withText("Crab"));
     click("a", withText("Add a/nother definition"));
     fill("#description").with("A tasty crustacean");
-    submit(".btn");
+    click("a", withText("Define Crab!"));
     assertThat(pageSource()).contains("A tasty crustacean");
   }
 }

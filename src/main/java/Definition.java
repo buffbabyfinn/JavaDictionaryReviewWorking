@@ -20,7 +20,7 @@ public class Definition {
   }
 
   public LocalDateTime getDefinedAt() {
-    return mDefinedAt.toLocalTime();
+    return mDefinedAt;
   }
 
   public int getId() {
