@@ -1,4 +1,4 @@
-# Vowel Replace
+# DIY Dictionary
 
 #### This site allows users to enter words and add as many definitions to each word as they'd like , Feb 19, 2016.
 
